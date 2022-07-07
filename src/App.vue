@@ -1,15 +1,23 @@
 <template>
-    <div>
-      <MyButton></MyButton>
+  <div>
+    <Header></Header>
+    <div class="container">
+      <Add></Add>
+      <List></List>
     </div>
+  </div>
 </template>
 <script>
-import MyButton from '@/components/MyButton'
+import Header from './components/Header.vue'
+import Add from './components/Add.vue'
+import List from './components/List.vue'
 export default {
     name:'',
     components:{
-      MyButton
-    }
+    Header,
+    Add,
+    List
+}
 }
 </script>
 <style scoped>
