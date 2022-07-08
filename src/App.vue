@@ -2,8 +2,8 @@
   <div>
     <Header></Header>
     <div class="container">
-      <Add></Add>
-      <List :coms="comments"></List>
+      <Add :AC="addComment"></Add>
+      <List :coms="comments" :DC="deleteComment"></List>
     </div>
   </div>
 </template>
@@ -25,6 +25,14 @@ data(){
       {id:2,content:'vue熟悉',username:'韩立'},
       {id:3,content:'vue精通',username:'小山'},
     ]
+  }
+},
+methods:{
+  addComment(c1){
+    this.comments.unshift(c1)
+  },
+  deleteComment(c2){
+    this.comments.splice(c2,1)
   }
 }
 }
