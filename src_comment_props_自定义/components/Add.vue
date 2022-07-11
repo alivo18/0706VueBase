@@ -27,7 +27,7 @@
 <script>
 export default {
   name: "",
-  props:['AC'],
+  // props:['AC'],
   data() {
     return {
       username: "",
@@ -49,7 +49,9 @@ export default {
         // 把数据给添加到comments数组当中
         // 数据在哪里操纵数据的方法就要定义在哪里，哪里需要操纵树，我们就把操纵数据的方法传递过来，让其调用
         // 在这里我们把App当中操纵添加评论的方法addComment传递给Add这个组件去调用添加评论
-        this.AC(obj)
+        // this.AC(obj)
+
+        this.$emit('AC',obj)
       } else {
         alert("请输入合法的用户名和内容")
       }
