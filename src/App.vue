@@ -2,7 +2,8 @@
   <div class="todo-container">
     <div class="todo-wrap">
       <Header :addTodo="addTodo"></Header>
-      <List :ts="todos" :updateOne="updateOne" :deleteOne="deleteOne"></List>
+      <List :ts="todos" :updateOne="updateOne" ></List>
+      <!-- :deleteOne="deleteOne" -->
       <Footer :ts="todos" :updateAll="updateAll" :deleteAll="deleteAll"></Footer>
     </div>
   </div>
@@ -17,6 +18,9 @@ export default {
       Header,
       List,
       Footer
+    },
+    mounted(){
+      this.$bus.$on('deleteOne',this.deleteOne)
     },
     data(){
         return{

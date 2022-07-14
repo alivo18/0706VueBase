@@ -1,17 +1,18 @@
 <template>
     <ul class="todo-main">
-      <Item v-for="(todo,index) in ts" :key="todo.id" :td="todo" :updateOne="updateOne" :index="index" :deleteOne="deleteOne"></Item>
+      <Item v-for="(todo,index) in ts" :key="todo.id" :td="todo" :updateOne="updateOne" :index="index" ></Item>
+      <!-- :deleteOne="deleteOne" -->
     </ul>
 </template>
 <script>
 import Item from '@/components/Item.vue'
-import { computed } from 'vue'
 export default {
     name:'',
     components:{
       Item
     },
-    props:['ts','updateOne','deleteOne'],
+    props:['ts','updateOne'],
+    // ,'deleteOne'
     // mounted(){
     //   console.log(this.ts)
     //   this.ts[1].content="修改测试"

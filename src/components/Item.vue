@@ -23,7 +23,7 @@ export default {
         required:true
       },
       updateOne:Function,
-      deleteOne:Function
+      // deleteOne:Function
     },
     data(){
       return{
@@ -46,7 +46,7 @@ export default {
         this.updateOne(this.index)
       },
       deleteO(){
-        this.deleteOne(this.index)
+        this.$bus.$emit('deleteOne',this.index)
       }
     }
 }
