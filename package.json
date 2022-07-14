@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "pubsub-js": "^1.9.4",
     "vue": "^2.6.14"
   },
   "devDependencies": {
@@ -32,12 +33,12 @@
     ],
     "parserOptions": {
       "parser": "@babel/eslint-parser",
-      "requireConfigFile":false
+      "requireConfigFile": false
     },
     "rules": {
-      "vue/multi-word-component-names":"off",
-      "vue/no-unused-components":"off",
-      "no-unused-vars":"off"
+      "vue/multi-word-component-names": "off",
+      "vue/no-unused-components": "off",
+      "no-unused-vars": "off"
     }
   },
   "browserslist": [

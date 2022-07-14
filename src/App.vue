@@ -2,13 +2,15 @@
   <div class="todo-container">
     <div class="todo-wrap">
       <Header :addTodo="addTodo"></Header>
-      <List :ts="todos" :updateOne="updateOne" ></List>
+      <List :ts="todos" ></List>
+      <!-- :updateOne="updateOne"  -->
       <!-- :deleteOne="deleteOne" -->
       <Footer :ts="todos" :updateAll="updateAll" :deleteAll="deleteAll"></Footer>
     </div>
   </div>
 </template>
 <script>
+import PubSub from 'pubsub-js'
 import Header from '@/components/Header.vue'
 import List from '@/components/List.vue'
 import Footer from '@/components/Footer.vue'
@@ -20,7 +22,10 @@ export default {
       Footer
     },
     mounted(){
+      // 在App当中找到总线，给总线绑定一个事件
       this.$bus.$on('deleteOne',this.deleteOne)
+      // 消息订阅
+      PubSub.subscribe('heihei', this.updateOne);
     },
     data(){
         return{
@@ -76,7 +81,7 @@ export default {
       addTodo(todo){
         this.todos.unshift(todo)
       },
-      updateOne(index){
+      updateOne(msg,index){
         this.todos[index].isOver = !this.todos[index].isOver
       },
       deleteOne(index){

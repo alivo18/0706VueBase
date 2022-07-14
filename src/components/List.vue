@@ -1,6 +1,7 @@
 <template>
     <ul class="todo-main">
-      <Item v-for="(todo,index) in ts" :key="todo.id" :td="todo" :updateOne="updateOne" :index="index" ></Item>
+      <Item v-for="(todo,index) in ts" :key="todo.id" :td="todo"  :index="index" ></Item>
+      <!-- :updateOne="updateOne" -->
       <!-- :deleteOne="deleteOne" -->
     </ul>
 </template>
@@ -11,7 +12,8 @@ export default {
     components:{
       Item
     },
-    props:['ts','updateOne'],
+    props:['ts'],
+    // ,'updateOne'
     // ,'deleteOne'
     // mounted(){
     //   console.log(this.ts)

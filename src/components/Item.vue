@@ -13,6 +13,7 @@
     </li>
 </template>
 <script>
+import PubSub from 'pubsub-js'
 export default {
     name:'',
     props:{
@@ -22,7 +23,7 @@ export default {
         type:Number,
         required:true
       },
-      updateOne:Function,
+      // updateOne:Function,
       // deleteOne:Function
     },
     data(){
@@ -43,7 +44,9 @@ export default {
     },
     methods:{
       updateO(){
-        this.updateOne(this.index)
+        // this.updateOne(this.index)
+
+        PubSub.publish('heihei',this.index)
       },
       deleteO(){
         this.$bus.$emit('deleteOne',this.index)
